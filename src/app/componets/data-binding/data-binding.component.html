@@ -1,0 +1,29 @@
+<p>data-binding works!</p>
+<div class="row"  style="margin-left:45px">
+    <div class="col-6">
+        <div class="row">
+        <p> One Way Binding</p>
+        <div class="col-6">
+            <p>From Source to View</p>
+            <p>1. Interpolation </p>
+            <div>First Name {{firstName}}</div>
+            <div>Last Name {{lastName}}</div> 
+            <div>{{9+8}}</div>          
+            <p>2. Property / Attribute </p>
+            <div><input type="text" value="Hard coded value"></div>
+            <div><input type="text" [value]="firstName"></div> 
+            <div> <button type="button" [disabled]="!isChanged"> Savve </button> </div> 
+            <div [class]="div1Class" style="height: 100px; width: 100px;"></div>
+            <div><button type="button" [style.color]="isSpecial ? 'red' : 'green'"> isSpecial </button></div>
+        </div>
+        <div class="col-6">
+            <p>From View to Source (Event binding)</p>
+            <button class="btn btn-success" (click) ="showWelcomeMessage()">Welcome</button>
+        </div>
+    </div>
+    </div>
+    <div class="col-6">
+        <p> Two Way Binding</p>
+        <div><input type="text" [(ngModel)] ="firstName"></div>
+    </div>
+</div>
