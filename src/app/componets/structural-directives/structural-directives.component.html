@@ -1,0 +1,53 @@
+<p>structural-directives works!</p>
+<div class="row"  style="margin-left:45px">
+    <p> ngIf</p>
+    <div class="row">
+        <div class="bg-success" *ngIf="isDiv1Visiable"> Click Hide, to hide me</div>
+    </div>
+    <div class="row">
+        <div class="btn-warning" *ngIf="!isDiv1Visiable"> Click Show, to view me</div>
+    </div>
+    <div class="row pt-2">
+        <button class="btn btn-primary" (click)="onClickShow()"> Show </button>
+        <button class="btn btn-warning" (click)="onClickHide()"> Hide </button>
+    </div>
+    <p> ngIf-else</p>
+    <select class="col-3" #loginSatus (change)="onLoginStatustChanged(loginSatus.value)">
+        <option> LsLoggedIn </option>
+        <option> LoggedOut </option>
+    </select>
+    <ng-template [ngIf]="isLoggedIn" [ngIfElse]="loggedOut">
+        <div>
+          Welcome back, friend.
+        </div>
+      </ng-template>
+      
+      <ng-template #loggedOut>
+        <div>
+          Please friend, login.
+        </div>
+      </ng-template>
+    <div class="col-3">
+        <p>ngFor</p>
+        <ul>
+            <li *ngFor="let city of cityList"> {{city}}</li>
+        </ul>
+    </div>
+    <p>ngSwitch</p>
+    <p>
+        <select #occupationList (change)="onOccupationListChanged(occupationList.value)">
+            <option> Select an occupation  </option>
+            <option> Teacher </option>
+            <option> Doctor </option>
+            <option> Lawer </option>
+        </select>
+    </p>
+    <!-- ngSwitch will not manipulate the DOM it will simply check the expression, so no need to add * -->
+    <!-- ngSwitchCase directive will manipulate the DOM, so add * -->
+    <div class="col-3" [ngSwitch]="occupation">
+        <p *ngSwitchCase="'Teacher'"> I am a Teacher</p>
+        <p *ngSwitchCase="'Doctor'"> I am a Doctor</p>
+        <p *ngSwitchCase="'Lawer'"> I am a Lawer</p>
+        <p *ngSwitchDefault>I am looking for a change</p>
+    </div>
+  </div>
