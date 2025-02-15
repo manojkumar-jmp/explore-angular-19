@@ -1,0 +1,15 @@
+<p>attribute-directives works!</p>
+<p>ngClass</p>
+<div class="row">
+    <div  class="col-3 p-4 bg-primary " > Static class</div>
+    <div  class="col-3 p-4 " [ngClass]= "'bg-success'" > using ngClass directive</div>
+    <div  class="col-3 p-4 " [class]= "'bg-warning'" > using attribute binding</div>
+</div>
+<p>ngStyle</p>
+<div class="row">
+    <div  class="col-3 p-4 " style="background-color: blue;" > Static style</div>
+    <!-- Style is acepting key value, so add as an object -->
+    <div  class="col-3 p-4 " [ngStyle]="{'background-color': 'green'}" > ngStyle directive</div>
+    <!-- <div  class="col-3 p-4 " [style.background]= 'blue'> ngStyle directive</div> -->
+</div>
+
