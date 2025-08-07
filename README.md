@@ -1,3 +1,5 @@
+📘 See [DISCLAIMER](https://github.com/manojkumar-jmp/.github/blob/main/DISCLAIMER.md) for legal and usage disclaimers related to this repository.
+
 # ExploreAngular19
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.1.6.
